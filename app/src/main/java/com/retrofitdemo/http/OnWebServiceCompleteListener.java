@@ -1,6 +1,6 @@
 package com.retrofitdemo.http;
 
-import com.retrofitdemo.bean.BaseBean;
+import okhttp3.ResponseBody;
 
 /**
  * Created by tarun on 23/12/16.
@@ -8,10 +8,7 @@ import com.retrofitdemo.bean.BaseBean;
 
 public interface OnWebServiceCompleteListener {
 
-    void onWebServiceComplete(BaseBean baseObject, int statusCode);
-
-    void onWebServiceError(Exception exception, int statusCode);
-
+    void onWebServiceComplete(ResponseBody baseObject);
     // this method will fired when service status is false
     void onWebStatusFalse(String message);
 
