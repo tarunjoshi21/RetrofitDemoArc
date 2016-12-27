@@ -50,11 +50,14 @@ public class ApiClient {
      * @return
      */
     public <S> S createService(Class<S> serviceClass) {
-        Retrofit retrofit = builder.client(httpClient.build()).build();
+        if (builder == null) {
+            builder = getRetrofitBuilder();
+        }
+        retrofit = builder.client(httpClient.build()).build();
         return retrofit.create(serviceClass);
     }
 
-    public  Retrofit getClient() {
+    private Retrofit getClient() {
         if (retrofit==null) {
             retrofit = getRetrofitBuilder()
                     .build();

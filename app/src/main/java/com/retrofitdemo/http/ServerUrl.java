@@ -5,5 +5,5 @@ package com.retrofitdemo.http;
  */
 
 public class ServerUrl {
-    public final static String  BASE_URL="http://httpbin.org/";
+    public final static String  BASE_URL="http://52.40.139.179/";
 }
